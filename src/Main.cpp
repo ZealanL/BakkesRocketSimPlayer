@@ -179,7 +179,8 @@ void BakkesRocketSimPlayer::RenderSettings() {
 		string instructions = STR(
 			"INSTRUCTIONS:"
 			"\nCreate a LAN private match with no bots and unlimited time."
-			"\nYou can join a team if you want a bot to control your car, or you can spectate."
+			"\nJoin a team so that the game starts. You can stay on a team if you want the a bot to use your car, otherwise go to spectate."
+			"\nThe game will glitch out during the countdown, but this should stop once the game starts."
 		);
 		instructions += DIVIDER;
 		ImGui::Text(instructions.c_str());
@@ -259,7 +260,6 @@ void BakkesRocketSimPlayer::FixConfig() {
 			maxPhysInterp = g_Config["Max Phys Interp Scale"].val;
 		g_Config.Set("Min Phys Interp Scale", MIN(minPhysInterp, maxPhysInterp));
 		g_Config.Set("Max Phys Interp Scale", MAX(minPhysInterp, maxPhysInterp));
-
 	}
 
 	fixConfigMutex.unlock();
