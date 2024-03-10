@@ -20,10 +20,11 @@ void GameManager::SetNumPlayers(int numPlayers) {
 		string name = g_Config["Bot Names"].strVal;
 		server.SpawnBot(23, name);
 	}
-
-	// Show normal freeplay car colors
-	g_PluginInst->cvarManager->executeCommand("cl_freeplay_carcolor 1", false);
-	g_PluginInst->cvarManager->executeCommand("cl_freeplay_stadiumcolors 1", false);
+	
+	if (g_PluginInst->gameWrapper->IsInFreeplay()) {
+		// Show normal freeplay stadium colors
+		g_PluginInst->cvarManager->executeCommand("cl_freeplay_stadiumcolors 1", false);
+	}
 
 	// Turn on anonymizer to get rid of goofy bot decals/toppers/etc.
 	g_PluginInst->cvarManager->executeCommand("cl_anonymizer_mode_team 1", false);
