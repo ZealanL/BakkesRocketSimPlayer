@@ -1,6 +1,8 @@
 # BakkesRocketSimPlayer
 A BakkesMod plugin for viewing RocketSim games in Rocket League
 
+![Screenshot](./screenshot.png)
+
 ## Building
 Build the .vcxproj with Visual Studio or MSBuild. 
 CMake support may happen in the future, but since BakkesMod plugins are Windows only, I don't see a good reason to.
